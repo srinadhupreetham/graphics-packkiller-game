@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="graphics_asgn1" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\src\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="graphics_asgn1">
+         <Option output="/home/sai/graphics-boilerplate-master/graphics_asgn1" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/include/libdrm" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 graphics_asgn1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="graphics_asgn1/fast">
+         <Option output="/home/sai/graphics-boilerplate-master/graphics_asgn1" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/include/libdrm" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 graphics_asgn1/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/ball.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/ball.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/color.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/ground.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/ground.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/input.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/main.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/main.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/nonedit.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/other_handlers.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/Sample_GL.vert">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/Sample_GL.frag">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
