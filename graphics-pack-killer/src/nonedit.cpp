@@ -178,7 +178,7 @@ struct VAO *create3DObject(GLenum primitive_mode, int numVertices, const GLfloat
         1,                            // attribute 1. Color
         3,                            // size (r,g,b)
         GL_FLOAT,                     // type
-        GL_FALSE,                     // normalized?
+        GL_TRUE,                     // normalized?
         0,                            // stride
         (void *) 0                    // array buffer offset
     );

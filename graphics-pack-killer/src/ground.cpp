@@ -4,16 +4,15 @@
 ground::ground(float height, float width,color_t color)
 {
         static const GLfloat vertex_buffer_data[] = {
-            -0.2, -0.2, 0, // vertex 1
-            0.2,  -0.2, 0, // vertex 2
-            0.2,  0.2, 0, // vertex 3
+            -100.0, -3.0, 0, // vertex 1
+            -100.0,  -5.0, 0, // vertex 2
+            100.0,  -5.0, 0, // vertex 3
 
-            0.2,  0.2, 0, // vertex 3
-            -0.2, 0.2, 0, // vertex 4
-            -0.2, -0.2, 0 // vertex 1
+            100.0,  -5.0, 0, // vertex 3
+            100.0, -3.0, 0, // vertex 4
+            -100.0, -3.0, 0 // vertex 1
         };
         this->object = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data, color, GL_FILL);
-
 }
 void ground::draw(glm::mat4 VP) {
         Matrices.model = glm::mat4(1.0f);

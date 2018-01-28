@@ -7,7 +7,7 @@
 class Enemy {
 public:
     Enemy() {}
-    Enemy(float x, float y, color_t color1, int index);
+    Enemy(float x, float y, color_t color1, float radius, int index);
     glm::vec3 position;
     float rotation;
     void draw(glm::mat4 VP);

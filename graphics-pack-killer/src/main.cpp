@@ -56,14 +56,16 @@ void draw() {
     // Don't change unless you are sure!!
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
+
     // Scene render
+    ground1.draw(VP);
     ball1.draw(VP);
     for (i=0;i<11;i++)
     {
         if(state[i] == 1)
         enemy[i].draw(VP);
     }
-   // ground1.draw(VP);
+     ground1.draw(VP);
 //    ene1.draw(VP);
 //    ball2.draw(VP);
 }
@@ -121,7 +123,11 @@ void tick_elements() {
         }
     }
 //    ene1.tick();`
-    if(jump && ball1.position.y > -3)
+    if(ball1.position.y < -2.7)
+    {
+        ball1.position.y = -2.7;
+    }
+    if(jump && ball1.position.y > -2.7)
     {
         ball1.tick1();
         count =1;
@@ -137,19 +143,19 @@ void tick_elements() {
 void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
-    ground(1,1,COLOR_GREEN);
-    ball1       = Ball(2, -3, COLOR_GREEN, COLOR_RED);
+    ground1 = ground(1,1,COLOR_DARKBROWN);
+    ball1       = Ball(2, -2.7, COLOR_RED, 0.3);
     for(i=0;i<10;i++)
     {
         x_rand = (rand()%20)/4.0 -2;
         y_rand = (rand()%20)/4.0 -1;
-        enemy[i] = Enemy(x_rand,y_rand,COLOR_RED,i);
+        enemy[i] = Enemy(x_rand,y_rand,COLOR_GREEN,0.2,i);
         cout << x_rand;
         state[i] = 1;
-////        cout << "\n";
+//        cout << "\n";
     }
     state[10] = 1;
-    enemy[10] = Enemy(2, -1,COLOR_BLACK,4);
+    enemy[10] = Enemy(2, -1,COLOR_GREEN,0.2,4);
     i=0;
 //    ball2       = Ball(-2, -3, COLOR_RED);
 //    ball2.speed = -ball2.speed;
@@ -163,7 +169,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     reshapeWindow (window, width, height);
 
     // Background color of the scene
-    glClearColor (COLOR_BACKGROUND.r * 1, COLOR_BACKGROUND.g *1, COLOR_BACKGROUND.b *1, 0.0f); // R, G, B, A
+    glClearColor (1.0,1.0,0.9, 0.0f); // R, G, B, A
     glClearDepth (1.0f);
 
     glEnable (GL_DEPTH_TEST);
@@ -178,7 +184,7 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 1480;
+    int width  = 1024;
     int height = 1024;
     window = initGLFW(width, height);
 
