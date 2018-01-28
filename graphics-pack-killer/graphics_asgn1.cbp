@@ -106,10 +106,22 @@
       <Unit filename="/home/sai/graphics-boilerplate-master/src/other_handlers.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/pointer.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/pointer.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/trampoline.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/trampoline.h">
          <Option target="graphics_asgn1"/>
       </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/CMakeLists.txt">

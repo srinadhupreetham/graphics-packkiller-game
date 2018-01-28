@@ -4,6 +4,8 @@
 #include "enemy.h"
 #include "ground.h"
 #include <cstdlib>
+#include "pointer.h"
+#include "trampoline.h"
 using namespace std;
 
 GLMatrices Matrices;
@@ -17,6 +19,8 @@ GLFWwindow *window;
 Ball ball1;
 Enemy enemy[10],ene1;
 ground ground1;
+Pointer pointer1;
+Trampoline trampoline1;
 float Z;
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 bool jump;
@@ -60,12 +64,19 @@ void draw() {
     // Scene render
     ground1.draw(VP);
     ball1.draw(VP);
+    trampoline1.set_position(y-2.2,-2.8);
+    trampoline1.draw(VP);
+    if(ball1.position.y > 3.9 )
+    {
+        pointer1.set_position(ball1.position.x,-2.95);
+        pointer1.draw(VP);
+    }
     for (i=0;i<11;i++)
     {
         if(state[i] == 1)
         enemy[i].draw(VP);
     }
-     ground1.draw(VP);
+//     ground1.draw(VP);
 //    ene1.draw(VP);
 //    ball2.draw(VP);
 }
@@ -122,7 +133,10 @@ void tick_elements() {
            ball1.speedy = (-ball1.speedy) + 0.05 ;
         }
     }
-//    ene1.tick();`
+    if(detect_collision_tramp(ball1.bounding_box(),trampoline1.bounding_box()))
+    {
+        ball1.speedy = (1.2 * -ball1.speedy);
+    }
     if(ball1.position.y < -2.7)
     {
         ball1.position.y = -2.7;
@@ -144,13 +158,16 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
     ground1 = ground(1,1,COLOR_DARKBROWN);
+    trampoline1 = Trampoline(-2.2,-2.8, COLOR_BLACK);
+    trampoline1.set_position(-2.2,-2.8);
     ball1       = Ball(2, -2.7, COLOR_RED, 0.3);
+    pointer1 = Pointer(2,-2.4,COLOR_BROWN);
     for(i=0;i<10;i++)
     {
         x_rand = (rand()%20)/4.0 -2;
         y_rand = (rand()%20)/4.0 -1;
         enemy[i] = Enemy(x_rand,y_rand,COLOR_GREEN,0.2,i);
-        cout << x_rand;
+//        cout << x_rand;
         state[i] = 1;
 //        cout << "\n";
     }
@@ -216,7 +233,10 @@ bool detect_collision(bounding_box_t a, bounding_box_t b) {
     return (abs(a.x - b.x)*2 < (a.width + b.width)) &&
            (abs(a.y - b.y)*2  < (a.height + b.height) && a.speed   < -0.0000000001 );
 }
-
+bool detect_collision_tramp(bounding_box_t a, bounding_box_t b) {
+    return (abs(a.x - b.x) < (a.width + b.width)) &&
+           (abs(a.y - b.y)  < (a.height + b.height));
+}
 void reset_screen() {
     float top    = screen_center_y + 4 / screen_zoom;
     float bottom = screen_center_y - 4 / screen_zoom;
