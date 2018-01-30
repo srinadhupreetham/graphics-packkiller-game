@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include "pointer.h"
 #include "trampoline.h"
+#include "porcupine.h"
+#include "pond.h"
 using namespace std;
 
 GLMatrices Matrices;
@@ -21,12 +23,16 @@ Enemy enemy[10],ene1;
 ground ground1;
 Pointer pointer1;
 Trampoline trampoline1;
+Porcupine porcupine1,porcupine2;
+Pond pond1;
+int water_ball = 0;
 float Z;
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 bool jump;
 int count =0;
 int y=0,i;
 int state[11];
+int score = 0;
 float x_rand,y_rand;
 Timer t60(1.0 / 60);
 
@@ -62,10 +68,18 @@ void draw() {
 
 
     // Scene render
-    ground1.draw(VP);
-    ball1.draw(VP);
-    trampoline1.set_position(y-2.2,-2.8);
+    trampoline1.set_position(y-2.4,-2.8);
     trampoline1.draw(VP);
+//    porcupine1.set_position(y+2.0,-3.0);
+    porcupine1.draw(VP);
+    porcupine2.set_position(y+porcupine1.position.x,-3.0);
+    porcupine2.draw(VP);
+    ground1.draw(VP);
+    pond1.set_position(y,-3.0);
+    pond1.draw(VP);
+    ball1.draw(VP);
+
+//    porcupine1.set_position();
     if(ball1.position.y > 3.9 )
     {
         pointer1.set_position(ball1.position.x,-2.95);
@@ -86,34 +100,44 @@ void tick_input(GLFWwindow *window) {
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int space = glfwGetKey(window, GLFW_KEY_SPACE);
     y = 8*round(ball1.position.x/8);
-    if (left) {
+    if (left && ball1.position.x < y + 0.6 && ball1.position.x > y-0.6) {
+        // Do something
+        ball1.position = ball1.position + (glm::vec3(-0.015,0,0));
+        ball1.rotation += 2.0;
+    }
+    if (right && ball1.position.x < y + 0.6 && ball1.position.x > y-0.6) {
+        ball1.position = ball1.position + (glm::vec3(0.015,0,0));
+        ball1.rotation -= 2.0;
+//        std:: cout << ball1.position.x ;
+//        std:: cout << "\n";
+    }
+    if (left && !(ball1.position.x < y + 0.6 && ball1.position.x > y-0.6)) {
         // Do something
         ball1.position = ball1.position + (glm::vec3(-0.03,0,0));
         ball1.rotation += 2.0;
     }
-    if (right) {
+    if (right && !(ball1.position.x < y + 0.6 && ball1.position.x > y-0.6)) {
         ball1.position = ball1.position + (glm::vec3(0.03,0,0));
         ball1.rotation -= 2.0;
 //        std:: cout << ball1.position.x ;
 //        std:: cout << "\n";
     }
-    if (space && count == 0) {
-//       Z = ball1.position.y;
-//       ball1.tick1();
-//       if (ball1.position.y > Z + 0.1)
-//       {
-//           ball1.tick2();
-//       }
+    if (space && count == 0 && !(ball1.position.x < y + 0.6 && ball1.position.x > y-0.6)) {
         ball1.speedy = 0.3 ;
         jump = true;
         ball1.tick1();
-        std::cout << ball1.speedy;
-        std::cout << "\n";
+//        std::cout << ball1.speedy;
+//        std::cout << "\n";
 
-//        ball1.tick();
-//        ball1.position += (glm ::vec3(0, 0.1,0));
-//        ball1.position += (glm ::vec3(0, -0.1,0));
-    }
+     }
+    if (space && count == 0 && (ball1.position.x < y + 0.6 && ball1.position.x > y-0.6)) {
+        ball1.speedy = 0.2 ;
+        jump = true;
+        ball1.tick1();
+//        std::cout << ball1.speedy;
+//        std::cout << "\n";
+
+     }
 
 }
 
@@ -133,11 +157,20 @@ void tick_elements() {
            ball1.speedy = (-ball1.speedy) + 0.05 ;
         }
     }
+    if(porcupine1.position.x > 3.6)
+    {
+        porcupine1.speed = -0.01;
+    }
+    if(porcupine1.position.x < 1.3)
+    {
+        porcupine1.speed = 0.01;
+    }
+    porcupine1.tick();
     if(detect_collision_tramp(ball1.bounding_box(),trampoline1.bounding_box()))
     {
         ball1.speedy = (1.2 * -ball1.speedy);
     }
-    if(ball1.position.y < -2.7)
+    if(ball1.position.y < -2.7 && !(ball1.position.x < y + 0.6 && ball1.position.x > y-0.6))
     {
         ball1.position.y = -2.7;
     }
@@ -147,6 +180,13 @@ void tick_elements() {
         count =1;
     }else
         count =0;
+    if(ball1.position.x < y + 0.6 && ball1.position.x > y-0.6 && !count)
+    {
+//        if(water_ball%2 == 1)
+            ball1.position.y = -3.0 - sqrt((0.6*0.6) -((y - ball1.position.x) * (y -ball1.position.x)));
+//        water_ball += 1;
+    }
+
 //      ball1.tick1();
 
 
@@ -158,14 +198,20 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
     ground1 = ground(1,1,COLOR_DARKBROWN);
-    trampoline1 = Trampoline(-2.2,-2.8, COLOR_BLACK);
-    trampoline1.set_position(-2.2,-2.8);
+    trampoline1 = Trampoline(-2.4,-2.8, COLOR_BLACK);
+    porcupine1 = Porcupine(-2.0,-2.0,COLOR_RED);
+    porcupine1.set_position(2.0,-3.0);
+    porcupine2 = Porcupine(-2.0,-2.0,COLOR_RED);
+    porcupine2.set_position(2.0,-3.0);
+    trampoline1.set_position(-2.4,-2.8);
+    pond1 = Pond(-0.0,-3.0,COLOR_SKYBLUE,0.9);
+    pond1.set_position(-2.0,-2.0);
     ball1       = Ball(2, -2.7, COLOR_RED, 0.3);
     pointer1 = Pointer(2,-2.4,COLOR_BROWN);
     for(i=0;i<10;i++)
     {
         x_rand = (rand()%20)/4.0 -2;
-        y_rand = (rand()%20)/4.0 -1;
+        y_rand = (rand()%20)/4.0 -1.5;
         enemy[i] = Enemy(x_rand,y_rand,COLOR_GREEN,0.2,i);
 //        cout << x_rand;
         state[i] = 1;
@@ -201,8 +247,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 1024;
-    int height = 1024;
+    int width  = 480;
+    int height = 480;
     window = initGLFW(width, height);
 
     initGL (window, width, height);

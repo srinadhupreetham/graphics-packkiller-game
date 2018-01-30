@@ -112,6 +112,18 @@
       <Unit filename="/home/sai/graphics-boilerplate-master/src/pointer.h">
          <Option target="graphics_asgn1"/>
       </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/pond.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/pond.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/porcupine.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/porcupine.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>

@@ -18,7 +18,12 @@ public:
     double speedy;
     bounding_box_t bounding_box();
 private:
-    VAO *object;
+    VAO *red;
+    VAO *black;
+    VAO *brown;
+    VAO *darkbrown;
+    VAO *green;
+    VAO *background;
 };
 
 #endif // BALL_H

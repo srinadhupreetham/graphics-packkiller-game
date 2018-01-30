@@ -7,3 +7,4 @@ const color_t COLOR_BLACK = { 64,64,64 };
 const color_t COLOR_BROWN = { 189,183,107};
 const color_t COLOR_DARKBROWN = {139,101,8};
 const color_t COLOR_BACKGROUND = { 242, 241, 239 };
+const color_t COLOR_SKYBLUE = {135,206,250};
