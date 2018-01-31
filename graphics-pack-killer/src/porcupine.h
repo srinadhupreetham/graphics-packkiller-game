@@ -10,6 +10,7 @@ public:
     Porcupine() {};
     Porcupine(float x, float y, color_t color1);
     glm::vec3 position;
+    float width,height;
     float rotation;
     double speed;
     void draw(glm::mat4 VP);

@@ -6,15 +6,6 @@ Enemy::Enemy(float x, float y, color_t color1,float radius,int index) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
     this ->speed = 0.02;
-//    static const GLfloat vertex_buffer_data[] = {
-//        -0.2, -0.2, 0, // vertex 1
-//        0.2,  -0.2, 0, // vertex 2
-//        0.2,  0.2, 0, // vertex 3
-
-//        0.2,  0.2, 0, // vertex 3
-//        -0.2, 0.2, 0, // vertex 4
-//        -0.2, -0.2, 0 // vertex 1
-//    };
     GLfloat vertex_buffer_data[180*3*3];
         int i=0;
         float param = 0.0;
@@ -32,6 +23,16 @@ Enemy::Enemy(float x, float y, color_t color1,float radius,int index) {
          vertex_buffer_data[9*i+7] = radius * sin(param * M_PI/180);
          vertex_buffer_data[9*i+8] = 0.0f;
         }
+    if(index%4 == 0)
+    {
+        color1 = COLOR_BLACK;
+        this -> speed = 0.015;}
+    else if (index%4 == 1)
+    {color1 = COLOR_RED;this-> speed = 0.02;}
+    else if (index%4 == 2)
+    {color1 = COLOR_GREEN;this -> speed = 0.03;}
+    else
+    {color1 = COLOR_SKYBLUE;this -> speed = 0.025;}
 //         glDrawArrays(GL_TRIANGLES, 0, 720*3);
         this->object = create3DObject(GL_TRIANGLES, 180*3, vertex_buffer_data, color1, GL_FILL);
 //    this->object = create3DObject(GL_TRIANGLES, 355*3, vertex_buffer_data, color2, GL_FILL);

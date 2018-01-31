@@ -8,12 +8,16 @@ class ground
 {
 public:
     ground() {}
-    ground(float height, float width, color_t color);
+    ground(float height, float width,float distance,color_t color1, color_t color2);
     glm::vec3 position;
+    float high,dist;
+    float wid;
     void draw(glm::mat4 VP);
     float rotation;
+    void set_position(float x, float y);
 private:
-    VAO *object;
+    VAO *grass;
+    VAO *soil;
 
 };
 

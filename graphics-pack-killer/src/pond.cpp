@@ -3,6 +3,7 @@
 
 Pond::Pond(float x, float y, color_t color1,float radius)
 {
+        this->radius = radius;
     GLfloat vertex_buffer_data[180*3*3];
         int i=0;
         float param = 0.0;

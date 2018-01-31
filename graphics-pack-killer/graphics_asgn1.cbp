@@ -85,6 +85,12 @@
       <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy.h">
          <Option target="graphics_asgn1"/>
       </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy_slope.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy_slope.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/src/ground.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
@@ -92,6 +98,12 @@
          <Option target="graphics_asgn1"/>
       </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/src/input.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/magnet.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-boilerplate-master/src/magnet.h">
          <Option target="graphics_asgn1"/>
       </Unit>
       <Unit filename="/home/sai/graphics-boilerplate-master/src/main.cpp">

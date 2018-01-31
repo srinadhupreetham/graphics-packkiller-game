@@ -14,6 +14,8 @@ public:
     void set_position(float x, float y);
     void tick1();
     void tick2();
+    int level;
+    float radius;
     double speed;
     double speedy;
     bounding_box_t bounding_box();
