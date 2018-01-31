@@ -6,6 +6,7 @@ Enemy::Enemy(float x, float y, color_t color1,float radius,int index) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
     this ->speed = 0.02;
+    this -> index = index;
     GLfloat vertex_buffer_data[180*3*3];
         int i=0;
         float param = 0.0;
@@ -59,6 +60,8 @@ void Enemy::tick() {
 
 bounding_box_t Enemy::bounding_box() {
     float x = this->position.x, y = this->position.y;
-    bounding_box_t bbox = { x, y, 0.2, 0.2};
+    float r;
+    r = 0.2*(index % 3);
+    bounding_box_t bbox = { x, y, r , r};
     return bbox;
 }
