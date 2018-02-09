@@ -13,6 +13,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <bits/stdc++.h>
 
 struct color_t {
     int r;
@@ -80,6 +81,8 @@ bool detect_collision_porcupine(bounding_box_t a, bounding_box_t b);
 
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
+void screen_zoom_in();
+void screen_zoom_out();
 
 // ---- Colors ----
 extern const color_t COLOR_RED;
@@ -89,5 +92,5 @@ extern const color_t COLOR_BACKGROUND;
 extern const color_t COLOR_BROWN;
 extern const color_t COLOR_DARKBROWN;
 extern const color_t COLOR_SKYBLUE;
-
+extern const color_t COLOR_YELLOW;
 #endif

@@ -40,8 +40,8 @@ Trampoline::Trampoline(float x,float y, color_t color1 ,float radius)
                 -radius, 0, 0 // vertex 1
             };
         this->nets = create3DObject(GL_TRIANGLES, 90*3, vertex_buffer_data + 90*9, color1, GL_FILL);
-        this->stick1 = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data1, color1, GL_FILL);
-        this->stick2 = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data2, color1, GL_FILL);
+        this->stick1 = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data1, COLOR_DARKBROWN, GL_FILL);
+        this->stick2 = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data2, COLOR_DARKBROWN, GL_FILL);
 }
 
 void Trampoline::draw(glm::mat4 VP) {

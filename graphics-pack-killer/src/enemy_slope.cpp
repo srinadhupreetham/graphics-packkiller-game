@@ -33,14 +33,14 @@ Enemy_slope::Enemy_slope(float x, float y, color_t color1 ,float radius , int in
           };
      if(index%4 == 0)
      {
-         color1 = COLOR_BLACK;
-         this -> speed = 0.005;}
+         color1 = COLOR_YELLOW;
+         this -> speed = 0.017;}
      else if (index%4 == 1)
      {color1 = COLOR_RED;this-> speed = 0.01;}
      else if (index%4 == 2)
-     {color1 = COLOR_GREEN;this -> speed = 0.02;}
+     {color1 = COLOR_GREEN;this -> speed = 0.028;}
      else
-     {color1 = COLOR_SKYBLUE;this -> speed = 0.015;}
+     {color1 = COLOR_SKYBLUE;this -> speed = 0.013 ;}
 //         glDrawArrays(GL_TRIANGLES, 0, 720*3);
         this->object1 = create3DObject(GL_TRIANGLES, 180*3, vertex_buffer_data1, color1, GL_FILL);
         this->object2 = create3DObject(GL_TRIANGLES, 6, vertex_buffer_data2, COLOR_DARKBROWN, GL_FILL);

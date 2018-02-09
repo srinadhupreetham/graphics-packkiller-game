@@ -14,7 +14,9 @@ public:
     void set_position(float x, float y);
     void tick1();
     void tick2();
+    void tick3();
     int level;
+    int lives;
     float radius;
     double speed;
     double speedy;

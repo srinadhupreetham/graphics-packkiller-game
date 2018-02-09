@@ -71,13 +71,17 @@ void Ball::tick1() {
 void Ball::tick2() {
     if(this -> speed < 0)
     {   this -> position.x += this->speed;
-        this -> speed += 0.006;
+        this -> speed += 0.0055;
     }
+}
+void Ball::tick3(){
+    this -> position.x += this->speed;
+      this -> speed += 0.0055;
 }
 
 bounding_box_t Ball::bounding_box() {
     float x = this->position.x, y = this->position.y;
     float s = this->speedy;
-    bounding_box_t bbox = { x, y, 0.3, 0.3,s };
+    bounding_box_t bbox = { x, y, 0.34, 0.34,s };
     return bbox;
 }
