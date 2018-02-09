@@ -28,10 +28,10 @@ Enemy_slope ene1[5];
 ground ground1;
 Pointer pointer1;
 Trampoline trampoline1;
-Porcupine porcupine1,porcupine2,porcupine3;
+Porcupine porcupine1,porcupine2;
 Pond pond1;
 Magnet magnet1;
-Digit digit1,digit2,digit3,digit4,digit5;
+Digit digit1,digit2,digit3,digit4;
 int pond_stat = 1;
 int water_ball = 0;
 float Z;
@@ -51,9 +51,7 @@ int count_magnet =0,magnet_status = 0;
 float x_rand,y_rand;
 Timer t60(1.0 / 60);
 double xin,yin,xout,yout;
-bool start = true;
 
-Timer bgm(31);
 /* Render the scene with openGL */
 /* Edit this function according to your assignment */
 void draw() {
@@ -74,8 +72,8 @@ void draw() {
     // Compute Camera matrix (view)
     // Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for 3D
     // Don't change unless you are sure!!
-    Matrices.view = glm::lookAt(glm::vec3(ball1.position.x+(pan/8), 0, 3), glm::vec3(ball1.position.x+(pan/8), 0, 0), glm::vec3(0, 1, 0));
-//    Matrices.view = glm::lookAt(glm::vec3(y+(pan/8), 0, 3), glm::vec3(y+(pan/8), 0, 0), glm::vec3(0, 1, 0));
+//    Matrices.view = glm::lookAt(glm::vec3(ball1.position.x, 0, 3), glm::vec3(ball1.position.x, 0, 0), glm::vec3(0, 1, 0));
+    Matrices.view = glm::lookAt(glm::vec3(y+(pan/8), 0, 3), glm::vec3(y+(pan/8), 0, 0), glm::vec3(0, 1, 0));
 // Matrices.view = glm::lookAt(glm::vec3((pan/8), 0, 3), glm::vec3((pan/8), 0, 0), glm::vec3(0, 1, 0));
 // Matrices.view = glm::lookAt(glm::vec3(y, 0, 3), glm::vec3(y, 0, 0), glm::vec3(0, 1, 0));
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
@@ -96,10 +94,11 @@ void draw() {
     if (spike_stat)
     {
         porcupine1.draw(VP);
+        if(y !=0 )
+        {
             porcupine2.set_position(y+porcupine1.position.x,ground1.dist + abs(y/10));
             porcupine2.draw(VP);
-            porcupine3.set_position(y-porcupine1.position.x,ground1.dist + abs(y/10));
-            porcupine3.draw(VP);
+        }
     }
     ground1.set_position(y,(ground1.dist - ground1.high));
     ground1.draw(VP);
@@ -124,12 +123,12 @@ void draw() {
         }
         else if(magnet_status == 1)
         {
-            magnet1.set_position(y- magnet1.distance,0.0);
+            magnet1.set_position(y - magnet1.distance,0.0);
             magnet1.draw(VP);
         }
         else if(magnet_status == -1)
         {
-            magnet1.set_position(y+ magnet1.distance,0.0);
+            magnet1.set_position(y + magnet1.distance,0.0);
             magnet1.draw(VP);
         }
     }
@@ -143,18 +142,16 @@ void draw() {
     digit2.set_position(y+2.7,3);
     digit3.set_position(y+2.4,3);
     digit4.set_position(y-3,3);
-    digit5.set_position(y+1.7,3);
     digit2.number = (score - (score)%10)/10;
   digit1.number = (score % 10);
   digit3.number = score/100;
-    digit5.number = 5;
+
   digit1.draw(VP);
   digit2.draw(VP);
   digit3.draw(VP);
   digit4.number = 3;
    digit4.number = ball1.lives;
   digit4.draw(VP);
-  digit5.draw(VP);
 
 //     ground1.draw(VP);
 //    ene1.draw(VP);
@@ -211,7 +208,7 @@ void tick_input(GLFWwindow *window) {
         screen_zoom -= 0.01   ;
         reset_screen();
     }
-    if((left) || ((mouseleft == GLFW_PRESS) && (xout - xin <0)) )
+    if(left || ((mouseleft == GLFW_PRESS) && (xout - xin <0)) )
     {
         if(detect_collision_leftside(ball1.bounding_box(),trampoline1.bounding_box()))
         {
@@ -295,8 +292,8 @@ void tick_elements() {
            ball1.speedy = (-ball1.speedy) + 0.05 ;
            enemy[i].speed = (0.01 + (0.005*score/10));
         }
-        if (enemy[i].position.x < -8.0)
-            enemy[i].position.x = 8.0;
+        if (enemy[i].position.x < -12.0)
+            enemy[i].position.x = 12.0;
     }
     for(i=0;i<5;i++)
      {
@@ -319,8 +316,8 @@ void tick_elements() {
            ball1.speedy = (-ball1.speedy) + 0.05 ;
            enemy[i].speed = (0.01 + (0.01*score/10));
         }
-        if (ene1[i].position.x < -8.0)
-            ene1[i].position.x = 8.0;
+        if (ene1[i].position.x < -12.0)
+            ene1[i].position.x = 12.0;
     }
    ball1.tick2();
     porcupine1.position.y = ground1.dist + abs(y/10);
@@ -343,12 +340,6 @@ void tick_elements() {
 //        std :: cout << score;
     }
     if(detect_collision_porcupine(ball1.bounding_box(),porcupine2.bounding_box()))
-    {
-        ball1.lives = ball1.lives -1;
-        porcupine1.set_position(y + 4.2,porcupine1.position.y);
-        score -= 5;
-    }
-    if(detect_collision_porcupine(ball1.bounding_box(),porcupine3.bounding_box()))
     {
         ball1.lives = ball1.lives -1;
         porcupine1.set_position(y + 4.2,porcupine1.position.y);
@@ -414,9 +405,8 @@ void tick_elements() {
 //        ball1.position.y = -2.7;
 //    }
 
-    if(score > 20)
+    if(score > 10)
     {
-        level =2;
         count_magnet += 1;
         if (count_magnet % 360 < 120)
         {
@@ -448,15 +438,6 @@ void tick_elements() {
     }
 
 //      ball1.tick1();
-    ////////////////////comment below section for infinity////////////////////
-    if(ball1.position.x < -4)
-    {
-        ball1.position.x = -4;
-    }
-    if(ball1.position.x > 4)
-    {
-        ball1.position.x = 4;
-    }
 
 
 }
@@ -473,13 +454,11 @@ void initGL(GLFWwindow *window, int width, int height) {
     porcupine1.set_position(2.0,ground1.dist);
     porcupine2 = Porcupine(-2.0,-2.0,COLOR_RED);
     porcupine2.set_position(2.0+100,ground1.dist);
-    porcupine3 = Porcupine(-2.0,-2.0,COLOR_DARKBROWN);
-    porcupine3.set_position(2.0+100,ground1.dist);
     trampoline1.set_position(-2.4,-2.3);
     pond1 = Pond(-0.0,-3.0,COLOR_SKYBLUE,0.9);
     pond1.set_position(-2.0,-2.0);
     ball1       = Ball(2, -2.7, COLOR_RED, 0.3);
-    ball1.lives = 3;
+    ball1.lives = 1;
     pointer1 = Pointer(2,-2.4,COLOR_BROWN);
     magnet1 = Magnet(1.2, 0.4, 4.0 ,COLOR_RED);
     for(i=0;i<10;i++)
@@ -505,8 +484,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     digit1 = Digit(0,1,COLOR_GREEN,0);
     digit2 = Digit(0,1,COLOR_GREEN,0);
     digit3 = Digit(0,1,COLOR_GREEN,0);
-    digit4 = Digit(0,1,COLOR_RED,ball1.lives);
-     digit5 = Digit(0,1,COLOR_RED,5);
+    digit4 = Digit(0,1,COLOR_RED,3);
 //    ene1 = Enemy_slope(2,-1.5,COLOR_BROWN,0.2,4);
     i=0;
 //    ball2       = Ball(-2, -3, COLOR_RED);
@@ -537,48 +515,36 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 1480;
-    int height = 1024;
+    int width  = 480;
+    int height = 480;
     window = initGLFW(width, height);
 
     initGL (window, width, height);
 
     /* Draw in loop */
     while (!glfwWindowShouldClose(window)) {
-//        if(bgm.processTick())
-//        system(" canberra-gtk-play -f   ./resources/magnet.wav --volume=\"1\"   &");
-        if(bgm.processTick()||start)
-                {
-                    start=false;
-                    system("pactl -- set-sink-volume 0 50% ");
-                    system(" canberra-gtk-play -f  resources/harpsi-cs.wav --volume=\"10\" &");
-
-
-                }
-
         // Process timers
            /////////////////////////////
+        //        string Result;
+        //                    stringstream convert;
+        //                    //cout << "nonedit score:" << score << endl;
+        //                    convert << score;
+        //                    Result = convert.str();
 
+        //                    const char *one = "Score ";
+        //                    const char *two = Result.c_str();
+        //                    const char *three = "   Level ";
+        //                    string Result1;
+        //                    stringstream convert1;
+        //                    convert1 << level;
+        //                    Result1 = convert1.str();
+        //                    const char *four = Result1.c_str();
+        //                    string total( string(one) + two + string(three) + four);
+        //                    glfwSetWindowTitle(window, total.c_str());
         //                    ///////////////////////////////
 //      std::string s = std::to_string(score);
 
         if (t60.processTick()) {
-                   string Result;
-                                stringstream convert;
-                                //cout << "nonedit score:" << score << endl;
-                                convert << score;
-                                Result = convert.str();
-
-                                const char *one = "Score ";
-                                const char *two = Result.c_str();
-                                const char *three = "   Level ";
-                                string Result1;
-                                stringstream convert1;
-                                convert1 << level;
-                                Result1 = convert1.str();
-                                const char *four = Result1.c_str();
-                                string total( string(one) + two + string(three) + four);
-                                glfwSetWindowTitle(window, total.c_str());
             // 60 fps
             // OpenGL Draw commands
             draw();

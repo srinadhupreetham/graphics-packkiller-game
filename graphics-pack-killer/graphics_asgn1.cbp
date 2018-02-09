@@ -8,38 +8,38 @@
       <Option virtualFolders="CMake Files\;CMake Files\src\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option working_dir="/home/sai/graphics-pack-killer" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="edit_cache">
-         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option working_dir="/home/sai/graphics-pack-killer" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 edit_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rebuild_cache">
-         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option working_dir="/home/sai/graphics-pack-killer" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="graphics_asgn1">
-         <Option output="/home/sai/graphics-boilerplate-master/graphics_asgn1" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option output="/home/sai/graphics-pack-killer/graphics_asgn1" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/sai/graphics-pack-killer" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -47,15 +47,15 @@
             <Add directory="/usr/include/libdrm" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 graphics_asgn1" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 graphics_asgn1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="graphics_asgn1/fast">
-         <Option output="/home/sai/graphics-boilerplate-master/graphics_asgn1" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/sai/graphics-boilerplate-master" />
+         <Option output="/home/sai/graphics-pack-killer/graphics_asgn1" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/sai/graphics-pack-killer" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
@@ -63,98 +63,104 @@
             <Add directory="/usr/include/libdrm" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 graphics_asgn1/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-boilerplate-master/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 graphics_asgn1/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/sai/graphics-pack-killer/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/ball.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/ball.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/ball.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/ball.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/color.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/color.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/digit.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/digit.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy_slope.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/enemy.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/enemy_slope.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/enemy.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/ground.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/enemy_slope.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/ground.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/enemy_slope.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/input.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/ground.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/magnet.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/ground.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/magnet.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/input.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/main.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/magnet.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/main.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/magnet.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/nonedit.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/main.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/other_handlers.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/main.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/pointer.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/nonedit.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/pointer.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/other_handlers.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/pond.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/pointer.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/pond.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/pointer.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/porcupine.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/pond.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/porcupine.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/pond.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/porcupine.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/timer.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/porcupine.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/trampoline.cpp">
+      <Unit filename="/home/sai/graphics-pack-killer/src/timer.cpp">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/trampoline.h">
+      <Unit filename="/home/sai/graphics-pack-killer/src/timer.h">
          <Option target="graphics_asgn1"/>
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/CMakeLists.txt">
+      <Unit filename="/home/sai/graphics-pack-killer/src/trampoline.cpp">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-pack-killer/src/trampoline.h">
+         <Option target="graphics_asgn1"/>
+      </Unit>
+      <Unit filename="/home/sai/graphics-pack-killer/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/Sample_GL.vert">
+      <Unit filename="/home/sai/graphics-pack-killer/src/Sample_GL.vert">
           <Option virtualFolder="CMake Files\src\" />
       </Unit>
-      <Unit filename="/home/sai/graphics-boilerplate-master/src/Sample_GL.frag">
+      <Unit filename="/home/sai/graphics-pack-killer/src/Sample_GL.frag">
           <Option virtualFolder="CMake Files\src\" />
       </Unit>
    </Project>

@@ -1,0 +1,3 @@
+/home/sai/graphics-pack-killer/CMakeFiles/edit_cache.dir
+/home/sai/graphics-pack-killer/CMakeFiles/rebuild_cache.dir
+/home/sai/graphics-pack-killer/CMakeFiles/graphics_asgn1.dir
